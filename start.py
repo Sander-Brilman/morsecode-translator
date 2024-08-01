@@ -5,7 +5,7 @@ text = input("What text do you want to translate?\n\n");
 
 text = text.lower().replace(" ", "");# normalize
 
-allowedChars = "qwweertyuiopoasdfghjklzxcvbnmn1234567890 ";
+allowedChars = ".- ";
 
 parsedText = "";
 
