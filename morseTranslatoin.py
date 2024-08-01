@@ -2,10 +2,10 @@ LETTERS = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
 MORSECODE_ALPHABET = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----"]
 
 def translate(input):
-    temp = ""
+    translatedText = ""
     arrayOfLetters = input.split(" ")
-    for i in range(len(arrayOfLetters)):
-        for j in range(len(MORSECODE_ALPHABET)):
-            if arrayOfLetters[i] == MORSECODE_ALPHABET[j]:
-                temp += LETTERS[j]
-    return temp
+    for inputLetterIndex in range(len(arrayOfLetters)):
+        for morseCodeLetterIndex in range(len(MORSECODE_ALPHABET)):
+            if arrayOfLetters[inputLetterIndex] == MORSECODE_ALPHABET[morseCodeLetterIndex]:
+                translatedText += LETTERS[morseCodeLetterIndex]
+    return translatedText
