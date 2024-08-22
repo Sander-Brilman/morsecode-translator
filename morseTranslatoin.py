@@ -1,11 +1,47 @@
-LETTERS = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-MORSECODE_ALPHABET = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----"]
+MORSECODE_ALPHABET = {
+    ".-"   : "a",
+    "-..." : "b",
+    "-.-." : "c",
+    "-.."  : "d",
+    "."    : "e",
+    "..-." : "f",
+    "--."  : "g",
+    "...." : "h",
+    ".."   : "i",
+    ".---" : "j",
+    "-.-"  : "k",
+    ".-.." : "l",
+    "--"   : "m",
+    "-."   : "n",
+    "---"  : "o",
+    ".--." : "p",
+    "--.-" : "q",
+    ".-."  : "r",
+    "..."  : "s",
+    "-"    : "t",
+    "..-"  : "u",
+    "...-" : "v",
+    ".--"  : "w",
+    "-..-" : "x",
+    "-.--" : "y",
+    "--.." : "z",
+    ".----": "1",
+    "..---": "2",
+    "...--": "3", 
+    "....-": "4",
+    ".....": "5", 
+    "-....": "6",
+    "--...": "7",
+    "---..": "8",
+    "---." : "9",
+    "-----": "0",
+    "/"   : " "
+}
 
 def translate(input):
     translatedText = ""
-    arrayOfLetters = input.split(" ")
-    for inputLetterIndex in range(len(arrayOfLetters)):
-        for morseCodeLetterIndex in range(len(MORSECODE_ALPHABET)):
-            if arrayOfLetters[inputLetterIndex] == MORSECODE_ALPHABET[morseCodeLetterIndex]:
-                translatedText += LETTERS[morseCodeLetterIndex]
+    letters = input.split(" ")
+
+    for each in letters:
+        translatedText += MORSECODE_ALPHABET[each]
     return translatedText
